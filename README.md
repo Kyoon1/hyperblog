@@ -17,14 +17,9 @@ Cursos echos en Platzi
 > - Terminal
 > - ----------
 
-## En este curso vemos de todo
-* Todos los comandos de Git 
-* El flujo de trabajo en Github
-* El verdadero amor por las buenas prácticas
-* Trucos muy locos del profesor
-* Las personalidades múltiples de Freddy
-* Creado por el Increible platzi team
-* incluye ejemplos en Windows, Linux y Mac
-* Disponibles para todas las edades
+## Programas mas Utiles 
+* [Visual Studio](https://code.visualstudio.com/ "Visual Studio")
+* [Mysql](https://www.mysql.com/ "Mysql")
+* [Terminal cmder](https://cmder.net/ "Terminal cmder")
 
-Y como un amable recordatorio: **Este readme.md es un chiste**..
+
