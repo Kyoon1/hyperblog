@@ -1,0 +1,121 @@
+Python es que se puede agregar un “else” al try-except.
+---------------------------------------------------------------------------
+TRY: En el try se coloca código que esperamos que pueda lanzar algún error.
+
+EXCEPT: En el except se maneja el error, es decir, si ocurre un error dentro del bloque de código del try, se deja de ejecutar el código del try y se ejecuta lo que se haya definido en el Except.
+
+ELSE: El else se ejecuta sólo si no hubo ninguna excepción lanzada desde el try
+
+FINALLY: Se ejecuta SIEMPRE, haya sido lanzada la excepción o no haya sido lanzada.
+
+
+try:
+except Exception:
+  print('Ocurrió una excepción')
+else:
+  print{ 'No ocurrió ninguna excepción')
+finally:
+  print( 'Siempre me ejecuto')
+-------------------------------------------------------------------------
+
+Manejo de Excepciones
+ ejemplor
+
+try except → Anidamos nuestro programa en dos bloques de código, el primero es el programa per se (el que se ejecuta normalmente, sin errores) y el segundo representa las instrucciones a seguir en caso de error.
+Su sintaxis es:
+
+try:
+  <bloque1>
+except <error> as
+<alias>:
+  <bloque 2>
+
+try:
+    pass #Código a evaluar
+except:
+    pass #Si ocurre un error,
+llegará a esta parte
+--------------------------------------------------------------
+
+<error> es un parámetro opcional, permite capturar sólo el tipo de error indicado, si no se coloca captura todos los errores posibles (es buena práctica capturar cada tipo de error por separado)
+as <alias> nos permite crear un alias al error, para trabajar con él.
+raise → Esta instrucción nos permite generar errores, es decir crear nuestros propios errores cuando detectemos que nuestro programa no actúa como debería con cierto tipo de datos
+Su sintaxis es:
+
+raise <NombreError>("
+<descripci[on del
+error>")
+-------------------------------------------------------------------
+
+fynally → Es una bloque de código que se ejecuta exista un error o no (un tercer bloque después de try except), no es muy usual pero puede darse para cerrar archivos, conexiones a BBDD o liberar recursos
+
+
+                    BaseException
+                      Exception-----------
+    ArithmeticException   |               |
+                    |     |           OSError
+FloatingPointError--|     |               |
+                    |     |        	  |-----FileNotFoundError
+OverflowError-------|     |               |
+                    |     |        	  |-----PermissionError
+ZeroDivisionError---|     |               |
+                          |        	  |-----TimeOutError
+    AttributeError--------|    
+                          |----->RuntimeError
+    BufferrError----------|         |
+                          |         |-->NotlmplementedError
+    EOFError -------------|         |
+                          |         |--> RecursionError
+    ImportError-----------|
+         |                |----SyntaxError
+ModuleNotFoundError       |
+                          |----SystemError
+       LookupError<-------|
+              |           |----TypeError
+IndexError----|           |
+              |           |----ValueError
+KeyError------|           |
+              |           |----Warning
+MemoryError---|                  |
+              |                  |-->DeprecationWarning
+NameError ----|                  |
+                                 |-->  RuntimeWarningtzi
+
+
+
+Dentro del maneja de excepciones, Python define un conjunto de excepciones integradas en forma de jerarquía, en donde podemos encontrar unas más generales que otras, es decir, para el caso de la excepción ZeroDivisionErrorexiste una excepción más general llamada ArithmeticError, y para el caso de la excepción ArithmeticError existe una excepción más general llamada Exception.
+
+Por lo que es importante definir bien el orden en el que ponemos cada excepción dentro del try, ya que cada excepción es leída de arriba a abajo, y la primera coincidencia que encuentra es la que ejecuta omitiendo las demás.
+
+def run():
+    try:
+        numero = 1 / 0
+        print(numero)
+    except ZeroDivisionError:
+        print('No se puede divir entre 0')
+    except ArithmeticError:
+        print('Se encontro un error aritmetico')
+    except:
+        print('Se encontro un error')
+
+
+if __name__ == '__main__':
+    run() # No se puede divir entre 0
+Si cambiamos el orden de las excepciones poniendo primero ArithmeticError, entonces la excepción ZeroDivisionError no se ejecutaría:
+
+def run():
+    try:
+        numero = 1 / 0
+        print(numero)
+    except ArithmeticError:
+        print('Se encontro un error aritmetico')
+    except ZeroDivisionError:
+        print('No se puede divir entre 0')
+    except:
+        print('Se encontro un error')
+
+
+if __name__ == '__main__':
+    run() # Se encontro un error aritmetico
+Recuerda entonces poner primero excepciones más concretas antes que las generales, y por último y si así lo deseas poner al final un except sin tipo de excepción para manejar cualquier tipo.
+

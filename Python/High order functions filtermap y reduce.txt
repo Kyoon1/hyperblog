@@ -1,0 +1,33 @@
+High order funcions
+O funciones de orden superior, son funciones que reciben como parámetro a otra función.
+Funciones de orden superior de importancia:
+
+filter → recibe una función filtro (anónima) y un iterable (lista, tupla, etc) devolviendonos un iterador: objeto optimizado recorrer elemento a elemento (iterar) por lo que no lo podemos inprimir de manera directa (para ello lo convertimos a una lista), su sintaxis es: filter(<funcion filtro>, <iterable>)
+map → al igual que filter recibe una función anónima y un iterable como parámetros pero en este caso map ejecuta la función sobre cada uno de los elementos del iterable, sintaxis: map(<funcion>, <iterable>)
+reduce → tenemos que importar esta función desde functools para poder usarla, tiene los mismos argumentos que las anteriores funciones, reduce el iterable por medio de la función anonima, su sintaxis es: reduce(<funcion reduccion>, <iterable>), la función de reducción necesita de dos parámetros, uno que almacena el resultado (o el primer valor del iterable) y otro que opera con el siguiente valor del iterable: lambda a,b: <expresión>
+
+
+ejemplo de la funciones filter map y reduce
+
+from functools import reduce
+def main():
+
+    #Filter
+    myList = [1,4,5,7,9,13,19,21]
+
+    odd = list(filter(lambda x: x % 2 != 0, myList))
+    print(odd)
+
+    #Map
+    myList2 = [1, 2, 3, 4, 5]
+
+    squares = list(map(lambda x: x**2, myList2))
+    print(squares)
+
+    myList3 = [2, 2, 2, 2, 2]
+    
+    allMultiplied = reduce(lambda a, b: a * b, myList3)
+    print(allMultiplied)
+
+if __name__ == '__main__':
+    main()

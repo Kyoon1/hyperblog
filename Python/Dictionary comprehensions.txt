@@ -1,0 +1,30 @@
+#Desafio consiste hacer un diccionario comprehesion, donde las llaves sean los 1000 primeros numeros naturales con sus raices cuadradas como valor
+ejemplo
+
+
+
+dictionary = {i: i**0.5 for i in range(1, 1001) }
+print(dictionary)
+NOTA: Como conocimiento general, las raices se pueden tratar tambien como potencias. Les dejo un link para quien quiera saber mas al respecto
+.
+.
+Raiz = Exponente Fracción
+
+
+
+def run():
+#    my_dict = {}
+
+#    for i in range(1, 101): muestre directorio del 1 al 100
+#        if i % 3 !=0:
+#              my_dict[i] = i**3
+
+    # my_dict = {i: i**3 for i in range(1, 101) if i % 3 !=0} muestre los numeros elevado al cuadrado de 1 al 100 
+
+    my_dict = {i: i**0.5 for i in range(1, 1001)} muestre directorio del 1 al 1000 con su raiz cuadrada 
+    
+    print(my_dict)
+
+
+if __name__ == '__main__':
+    run()

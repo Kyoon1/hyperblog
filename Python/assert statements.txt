@@ -1,0 +1,43 @@
+Assert statements
+
+Es una manera poco usual de manejar los errores en python
+Evalúa una condicional, si esta se cumple continuamos con el flujo normal del python, si no se cumple eleva un error del tipo AssertionError y nos muestra un mensaje.
+Su sintaxis es:
+assert <condicion>, <"mensaje">
+<código>
+
+
+No es necesario introducir nuevo codigo para el desafio del profesor ya que el metodo “.isnumeric” solo reconoce como strings numericos aquellos que solo tienen numeros. No acepta signos como el “-”. Por ello cualquier numero negativo será rechazado por el mismo assert statement que el que rechaza las letras y palabras:
+------------------------------------------------------------------------
+def division(num):
+    division = []
+    for i in range(1, num + 1):
+        if num % i == 0:
+            division.append(i)
+    return division
+
+
+def run():
+    num = input("ingrese un numero: ")
+    assert num.isnumeric(), "Debes ingresar un numero positivo"
+    print(division(int(num)))
+    print("Termino el programa")
+     
+
+if __name__=='__main__':
+    run()
+-------------------------------------------------------------
+# def divisor(num):
+#     divisors = [i for i in range(1,num+1) if num%i == 0]
+#     return divisors
+
+# def run():
+#     num = input('Enter a number: ')
+#     assert num.isnumeric() and int(num)>0, 'Ingresa solo numeros positivos'
+#     print(divisor(int(num)))
+#     print('Finish')
+
+
+# if __name__ == '__main__':
+#     run()
+------------------------------------------------------------

@@ -1,0 +1,42 @@
+https://github.com/anthonymanotoa/course_python_intermediate/commit/b420ceac9a261917c52afdd34fd8d766ec312c0a
+
+import random
+import os
+def read data():
+   with open("./codigo_python/archivos_texto/data.txt", r, encoding="utf-8") as f:
+       datos = [line.strip( '\n') for line in f]
+    dict_datos = {key:value for key, value in enumerate( datos)}
+    return dict_datos
+def normalize(s): # It removes the accents of a string
+    replacements = (("á", "a"),("é", "e"),("", "i"),(6, "o"),("ú", "u"),)
+    for a, b in replacements:
+        5= 5. replace(a, b).replace(a.upper(), b.upper())
+    return s
+def run ():
+    try:
+        dict_datos = read_data( )
+       palabra_adivinar- normalize(dict_datos.get(random.randint(1, len(dict_datos)+1)))
+        palabra_adivinando = len(palabra_adivinar)*""
+        print("""iBienvenido al juego del ahorcado! \nAdivina la siguiente palabra:**")
+                             %TD
+       while palabra_adivinar !- palabra_adivinando:
+             print(palabra_adivinando)
+             letra = normalize( input ( "Ingresa una letra: "))
+             if letra in palabra_adivinar:
+                 palabra_adivinando = list(palabra_adivinando)
+                  for i,x in enumerate(palabra_adivinar):
+                      if x letra:
+                          palabra_adivinando[i] = x
+                 palabra_adivinando = "".join( palabra_adivinando)
+             os. system( "cls")
+        print(f'iGanaste! tu palabra era {palabra_adivinando}')
+        volver_jugar = int(input("¿Quieres jugar nuevamente?: \nl. Si\n2. No\n"))
+        if volver jugar == 1:
+             run()
+        else:
+             print( "Adiós :)")
+    except ValueError:
+        print( "Sólo debes ingresar letras")
+if name
+    run()
+                   main':

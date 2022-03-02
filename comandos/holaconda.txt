@@ -1,0 +1,19 @@
+conda env list > lista todos los ambientes que tengas en tu computadora
+conda create —name py35 python=3.5 pandas > crea el entorno virtual llamado “py35” con la version de python 3.5 y la ultima version de pandas disponible
+conda activate py35 > activa el entorno virtual llamado py35
+conda deactivate > desactiva el ambiente que tengas activo
+conda list > muestra todas las versiones de los paquetes que tengas instalados en el ambiente en el que te encuentres.
+conda list X > te muestra unicamente la version de X que tenga el ambiente
+conda update X > actualiza a la version mas reciente disponible del paquete X
+conda instal X=3.9 Y=1.2> instala la version 3.9 del paquete X y la version 1.2 del paquete Y
+conda create —name py39 —copy —clone py39 > crea el ambiente “py39” y clona todas las versiones de los paquetes que tenga el ambiente “py35”
+conda env remove —name py39 > elimina el ambiente llamado “py39”
+conda install -c conda-forge boltons > usamos este comando para especificarle a la terminal el canal que debe de usar para descargar el paquete que queremos.
+conda remove X > elimina el paquete X
+conda install —revision
+conda list —revision > nos lista todos los estados en los que ha estado nuestro ambiente, es como un git log que nos deja ver las dependencias que instalamos y removemos
+conda install —revision 0 > nos devuelve o adelanta al estado del ambiente en la revision 0
+conda env export —no-builds > muestra el nombre del ambiente y las versiones de sus dependencias instalados
+conda env export —from-history > nos muestra el nombre del ambiente y las versiones de las dependencias que nosotros especificamos manualmente
+conda env export —from-history —file enviroment.yml > nos crea un file con las dependencias que nosotros especificamos manualmente que debe tener el ambiente
+conda env create —file enviroment.yml > nos crea un ambiente con las espesificaciones del archivo “enviroment.yml” incluso el nombre del ambiente va a ser el mismo

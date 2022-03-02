@@ -1,0 +1,21 @@
+Mis apuntes de esta lección.
+
+Reconstrucción de Commits
+Si el último commit que hicimos tenía un error, por ejemplo de ortografía o quizá se nos olvidó agregar algo al código de ese commit podemos darle solución con el siguiente comando.
+
+→ Modificar el mensaje del commit más reciente.
+
+$ git commit --amend
+→ Modificar el commit más reciente y su mensaje en la misma línea.
+
+$ git commit --amend -m
+Recordar que -m permite escribir un mensaje desde la línea de comandos sin tener que abrir un editor.
+
+→ Modificar el commit sin modificar el mensaje de dicho commit.
+
+$ git commit --amend --no-edit
+El indicador --no-edit permite hacer correcciones el el código sin modificar el mensaje original.
+
+Este comando es una manera práctica de modificar la información más reciente de nuestro repositorio.
+
+No utilizar --amend para reconstruir commits que ya se encuentran en el repositorio remoto. Esto sería una mala práctica.

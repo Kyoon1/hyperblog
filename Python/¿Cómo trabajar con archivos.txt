@@ -1,0 +1,68 @@
+Modos de Apertura
+
+with open("./ruta/del/archivo.txt", "r") as f:
+
+with open("./ruta/del/archivo.txt", "w") as f:
+
+with open("./ruta/del/archivo.txt", "a") as f:
+
+
+r -> Solo lectura
+r+ -> Lectura y escritura
+w -> Solo escritura. Sobre escribe el archivo si existe. Crea el archivo si no existe
+w+ -> Escritura y lectura. Sobre escribe el archivo si existe. Crea el archivo si no existe
+a -> Añadido (agregar contenido). Crea el archivo si éste no existe
+a+ -> Añadido (agregar contenido) y lectura. Crea el archivo si éste no existe.
+
+Resumen
+|
+Existen varias extensiones de archivos con los que podemos interactuar con python (js,csv,py,css,json,xml)
+Para abrir un archivo seguimos las siguiente estructura
+
+with open(<ruta>, <modo_apertura>) as <nombre>
+with Es un manejador contextual, nos ayuda a controlar el flujo del archivo (sirve para que el archivo no se dañe cuando existe algún cierre inesperado)
+
+open(ruta,modo_apertura): es una función que necesita de dos parámetros
+
+ruta: es donde se encuentra nuestro archivo en nuestro equipo
+
+modo_de_apertura: como vamos a abrir el archivo, los modificadores son:
+r → modo de lectura
+w → modo de escritura (sobreescribe el archivo)
+a → modo append (añade información al final del archivo)
+
+as <nombre> nos ayuda a darle una abreviatura o un nombre a los datos que acabamos de leer
+
+
+
+Para trabajar con archivos de M. Excel se puede utilizar el módulo OpenPyXL :
+
+Lectura y escritura de libros
+Creación y acceso a las hojas de cálculo
+Creación de fórmulas de Excel
+Creación de gráficos, con apoyo de otros módulos
+OpenPyXL no hace parte de las librerias estándar de Python y por ello se requiere instalar:
+
+pip install openpyxl
+Sitio Web
+
+Ejemplo:
+
+from openpyxl import Workbook
+wb = Workbook()
+
+# grab the active worksheet
+ws = wb.active
+
+# Data can be assigned directly to cells
+ws['A1'] = 42
+
+# Rows can also be appended
+ws.append([1, 2, 3])
+
+# Python types will automatically be converted
+import datetime
+ws['A2'] = datetime.datetime.now()
+
+# Save the file
+wb.save("sample.xlsx")

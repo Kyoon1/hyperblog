@@ -1,0 +1,13 @@
+Quiero dejar bien en claro ¿cuando funciona git clean?
+Git clean solo detecta archivos nuevos, no es necesario que se trate de una copia de otro archivo, suficiente con que sea un archivo nuevo que ustedes hayan creado.
+
+**git clean --dry-run **
+Simula la eliminación de archivos, ¿tienes dudas de que archivos eliminará?, ejecuta git clean --dry-run, y cuando estes seguro de que desea eliminarlos, ejecutas git clean -f
+
+Archivos que se hayan modificado o editados git clean no interviene aquí.
+
+Git Clean tiene un montón de opciones.
+Por ejemplo, si usas -q te mostrará solamente los errores que tuvo la ejecución, pero no los archivos que fueron borrados.
+Si usas -x (En minúscula) borra las copias incluyendo las que están dentro de un .gitignore
+En cambio, si usas -X (En mayúscula) borra solamente los archivos ignorados por git
+Hay muchas opciones más! Y las puedes ver en la documentación de Git Clean
